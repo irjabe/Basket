@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{% block title %}Basket{% endblock %}</title>
+    {% block stylesheets %}
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="stylesheet" href="{{ asset('css/materialize.css') }}">
+        <link rel="stylesheet" href="{{asset('css/main.css')}}">
+    {% endblock %}
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+</head>
+<body>
+    <div class="container">
+        <header>
+            {% include(':partials:header.html.twig') %}
+        </header>
+        <main>
+            {% block body %}{% endblock %}
+        </main>
+        <footer class="page-footer">
+            {% include(':partials:footer.html.twig') %}
+        </footer>
+        <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="{{ asset('js/materialize.min.js') }}"></script>
+        {% block javascripts %}{% endblock %}
+    </div>
+</body>
+</html>
